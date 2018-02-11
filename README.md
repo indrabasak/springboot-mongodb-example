@@ -1,5 +1,7 @@
 [![Build Status][travis-badge]][travis-badge-url]
 
+![](./img/spring-boot-mongo-logo.jpg)
+
 Spring Boot with MongoDB Example
 ===============================================================
 This is an example of Spring Boot with embedded MongoDB.
