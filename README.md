@@ -1,4 +1,7 @@
 [![Build Status][travis-badge]][travis-badge-url]
+[![Quality Gate][sonarqube-badge]][sonarqube-badge-url] 
+[![Technical debt ratio][technical-debt-ratio-badge]][technical-debt-ratio-badge-url] 
+[![Coverage][coverage-badge]][coverage-badge-url]
 
 ![](./img/spring-boot-mongo-logo.jpg)
 
@@ -74,3 +77,12 @@ book entities.
 
 [travis-badge]: https://travis-ci.org/indrabasak/springboot-mongodb-example.svg?branch=master
 [travis-badge-url]: https://travis-ci.org/indrabasak/springboot-mongodb-example/
+
+[sonarqube-badge]: https://sonarcloud.io/api/badges/gate?key=com.basaki:springboot-mongodb-example
+[sonarqube-badge-url]: https://sonarcloud.io/dashboard/index/com.basaki:springboot-mongodb-example 
+
+[technical-debt-ratio-badge]: https://sonarcloud.io/api/badges/measure?key=com.basaki:springboot-mongodb-example&metric=sqale_debt_ratio
+[technical-debt-ratio-badge-url]: https://sonarcloud.io/dashboard/index/com.basaki:springboot-mongodb-example 
+
+[coverage-badge]: https://sonarcloud.io/api/badges/measure?key=com.basaki:springboot-mongodb-example&metric=coverage
+[coverage-badge-url]: https://sonarcloud.io/dashboard/index/com.basaki:springboot-mongodb-example
