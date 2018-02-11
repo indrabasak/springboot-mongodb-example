@@ -1,7 +1,6 @@
 package com.basaki.error;
 
 import com.basaki.error.exception.DataNotFoundException;
-import com.basaki.error.exception.DatabaseException;
 import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -37,25 +36,6 @@ public class ExceptionProcessor {
     public ErrorInfo handleDataNotFoundException(
             HttpServletRequest req, DataNotFoundException ex) {
         ErrorInfo info = getErrorInfo(req, HttpStatus.NOT_FOUND);
-        info.setMessage(ex.getMessage());
-
-        return info;
-    }
-
-    /**
-     * Handles <tt>DatabaseException</tt> exception.It unwraps the root case
-     * and coverts it into an <tt>ErrorInfo</tt> object.
-     *
-     * @param req HTTP request to extract the URL
-     * @param ex  exception to be processed
-     * @return ths error information that is sent to the client
-     */
-    @ExceptionHandler(DatabaseException.class)
-    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-    @ResponseBody
-    public ErrorInfo handleDatabaseException(
-            HttpServletRequest req, DatabaseException ex) {
-        ErrorInfo info = getErrorInfo(req, HttpStatus.INTERNAL_SERVER_ERROR);
         info.setMessage(ex.getMessage());
 
         return info;

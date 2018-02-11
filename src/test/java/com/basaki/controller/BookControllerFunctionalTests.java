@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import java.io.IOException;
+import java.util.UUID;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,5 +79,17 @@ public class BookControllerFunctionalTests {
         assertEquals(bookCreate.getAuthor(), bookRead.getAuthor());
         assertEquals(bookCreate.getTitle(), bookRead.getTitle());
         assertEquals(bookCreate.getAuthor(), bookRead.getAuthor());
+    }
+
+    @Test
+    public void testDataNotFoundRead() {
+        Response response = given()
+                .baseUri("http://localhost")
+                .port(port)
+                .contentType(ContentType.JSON)
+                .get("/books/" + UUID.randomUUID().toString());
+
+        assertNotNull(response);
+        assertEquals(404, response.getStatusCode());
     }
 }

@@ -1,6 +1,7 @@
 package com.basaki.controller;
 
 import com.basaki.data.entity.Book;
+import com.basaki.error.exception.DataNotFoundException;
 import com.basaki.model.BookRequest;
 import com.basaki.service.BookService;
 import java.util.UUID;
@@ -61,5 +62,13 @@ public class BookControllerTest {
         Book result = controller.read(UUID.randomUUID());
         assertNotNull(result);
         assertEquals(book, result);
+    }
+
+    @Test(expected = DataNotFoundException.class)
+    public void testDataNotFoundRead() {
+        when(service.read(any(UUID.class))).thenThrow(
+                new DataNotFoundException("Not Found!"));
+
+        controller.read(UUID.randomUUID());
     }
 }
