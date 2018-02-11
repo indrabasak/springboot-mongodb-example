@@ -13,8 +13,8 @@ This is an example of Spring Boot with embedded MongoDB.
 1. `MongoConfiguration` to configure embedded MongoDB.
 
 1. `CustomMongoRepository` and `CustomSimpleMongoRepository` creates a custom
-Mongo repository. It's responsible for generating and setting entoy/document
-id field during insertion if the id is null.
+Mongo repository. It's responsible for generating and setting entity/document
+id field during insertion if the id is null and it's of type UUID.
 
 1. `BookRepository` responsible for CRUD operations on `Book` entity/document.
 
@@ -23,7 +23,7 @@ id field during insertion if the id is null.
 #### Spring Boot MongoDB Starter
 
 The `spring-boot-starter-data-mongodb.jar` provides all Spring related MongoDB
-classes included `MongoRepository`.
+classes including `MongoRepository`.
 
 ```xml
 <dependency>

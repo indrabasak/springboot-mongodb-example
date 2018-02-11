@@ -2,7 +2,9 @@ package com.basaki.service;
 
 import com.basaki.data.entity.Book;
 import com.basaki.data.repository.BookRepository;
+import com.basaki.error.exception.DataNotFoundException;
 import com.basaki.model.BookRequest;
+import java.util.Optional;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +37,12 @@ public class BookService {
     }
 
     public Book read(UUID id) {
-        return repository.findById(id).get();
+        Optional<Book> optional = repository.findById(id);
+        if (optional.isPresent()) {
+            return optional.get();
+        }
+
+        throw new DataNotFoundException("Book with ID " + id + " not found.");
     }
 
     private Book validateRequest(BookRequest request) {

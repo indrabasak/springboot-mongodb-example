@@ -4,9 +4,9 @@ server:
 
 # For Spring Actuator /info endpoint
 info:
-    artifact: spring-binary-weaving-example
-    name: spring-binary-weaving-example
-    description: Spring Binary Weaving Example
+    artifact: spring-mongodb-example
+    name: spring-mongodb-example
+    description: Spring MongoDB Example
     version: 1.0.0
 
 #Exposes Spring actuator endpoints

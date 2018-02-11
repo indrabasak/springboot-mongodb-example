@@ -8,10 +8,10 @@ import org.springframework.data.repository.NoRepositoryBean;
  * <p/>
  *
  * @param <T>  type of entity
- * @param <ID> type of entity id
+ * @param <I> type of entity id
  * @author Indra Basak
  * @since 2/10/17
  */
 @NoRepositoryBean
-public interface CustomMongoRepository<T, ID> extends MongoRepository<T, ID> {
+public interface CustomMongoRepository<T, I> extends MongoRepository<T, I> {
 }

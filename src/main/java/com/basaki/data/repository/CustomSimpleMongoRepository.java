@@ -11,22 +11,22 @@ import org.springframework.util.ReflectionUtils;
 
 /**
  * {@code CustomSimpleMongoRepository} is a custom Mongo repository responsible
- * for inserting a new value for ID field of ype UUID if it's null during
+ * for inserting a new value for I field of ype UUID if it's null during
  * insertion.
  * <p/>
  *
  * @param <T> type of entity
- * @param <ID> type of entity id
+ * @param <I> type of entity id
  * @author Indra Basak
  * @since 2/10/17
  */
-public class CustomSimpleMongoRepository<T, ID> extends SimpleMongoRepository<T, ID>
-        implements CustomMongoRepository<T, ID> {
+public class CustomSimpleMongoRepository<T, I> extends SimpleMongoRepository<T, I>
+        implements CustomMongoRepository<T, I> {
 
-    private MongoEntityInformation<T, ID> entityInformation;
+    private MongoEntityInformation<T, I> entityInformation;
 
     public CustomSimpleMongoRepository(
-            MongoEntityInformation<T, ID> metadata,
+            MongoEntityInformation<T, I> metadata,
             MongoOperations mongoOperations) {
         super(metadata, mongoOperations);
         this.entityInformation = metadata;

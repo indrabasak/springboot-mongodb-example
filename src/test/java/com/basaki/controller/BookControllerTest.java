@@ -16,7 +16,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 /**
- * {@code BookControllerTest} represents unit tests for {@code
+ * {@code BookControllerTest} represents unit test for {@code
  * BookController}.
  * <p/>
  *
