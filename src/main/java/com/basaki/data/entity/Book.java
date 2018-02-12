@@ -5,8 +5,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.UUID;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -19,8 +19,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @since 11/23/17
  */
 @Document(collection = "Books")
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
 @ApiModel(value = "Book")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Book implements Serializable {

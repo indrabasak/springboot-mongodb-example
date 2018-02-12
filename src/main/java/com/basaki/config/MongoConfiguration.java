@@ -5,7 +5,6 @@ import com.mongodb.Mongo;
 import cz.jirutka.spring.embedmongo.EmbeddedMongoBuilder;
 import java.io.IOException;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,17 +23,14 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 public class MongoConfiguration {
 
     @Getter
-    @Setter
     @Value("${data.version:3.6.1}")
     private String version;
 
     @Getter
-    @Setter
     @Value("${data.host:127.0.0.1}")
     private String host;
 
     @Getter
-    @Setter
     @Value("${data.port:12345}")
     private int port;
 
