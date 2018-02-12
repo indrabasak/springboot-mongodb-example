@@ -63,5 +63,6 @@ public class CustomErrorControllerTest {
         ErrorInfo errorInfo = controller.error(request, response);
         assertNotNull(errorInfo);
         assertEquals("test-message", errorInfo.getMessage());
+        assertNotNull(controller.getErrorPath());
     }
 }
