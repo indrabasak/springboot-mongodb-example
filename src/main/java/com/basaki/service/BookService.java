@@ -8,6 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
@@ -30,12 +31,14 @@ public class BookService {
         this.repository = repository;
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @Transactional
     public Book create(BookRequest request) {
         Book entity = validateRequest(request);
         return repository.save(entity);
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
     public Book read(UUID id) {
         Optional<Book> optional = repository.findById(id);
         if (optional.isPresent()) {

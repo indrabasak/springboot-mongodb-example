@@ -74,6 +74,9 @@ Once the application starts up at port `8080`, you can access the swagger UI at
 `http://localhost:8080/swagger-ui.html`. From the UI, you can create and retrieve
 book entities.
 
+Basic authorization is enambled, you have to use `admin/admin` credentials
+for creating and retrieving books. 
+
 
 [travis-badge]: https://travis-ci.org/indrabasak/springboot-mongodb-example.svg?branch=master
 [travis-badge-url]: https://travis-ci.org/indrabasak/springboot-mongodb-example/

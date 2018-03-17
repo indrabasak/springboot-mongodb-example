@@ -5,6 +5,7 @@ import com.basaki.model.BookRequest;
 import com.basaki.service.BookService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Authorization;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,8 @@ public class BookController {
         this.service = service;
     }
 
-    @ApiOperation(value = "Creates a book.", response = Book.class)
+    @ApiOperation(value = "Creates a book.", response = Book.class,
+            authorizations = {@Authorization(value = "basicAuth")})
     @RequestMapping(method = RequestMethod.POST, value = "/books")
     @ResponseStatus(HttpStatus.CREATED)
     public Book create(@RequestBody BookRequest request) {
@@ -44,7 +46,8 @@ public class BookController {
     }
 
     @ApiOperation(value = "Retrieves a book.", notes = "Requires book identifier",
-            response = Book.class)
+            response = Book.class,
+            authorizations = {@Authorization(value = "basicAuth")})
     @RequestMapping(method = RequestMethod.GET, produces = {
             MediaType.APPLICATION_JSON_VALUE}, value = "/books/{id}")
     public Book read(@PathVariable("id") UUID id) {

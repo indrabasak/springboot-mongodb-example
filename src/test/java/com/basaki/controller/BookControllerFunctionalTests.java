@@ -47,6 +47,7 @@ public class BookControllerFunctionalTests {
         BookRequest bookRequest = new BookRequest("Indra's Chronicle", "Indra");
 
         Response response = given()
+                .auth().basic("admin", "admin")
                 .contentType(ContentType.JSON)
                 .baseUri("http://localhost")
                 .port(port)
@@ -64,6 +65,7 @@ public class BookControllerFunctionalTests {
         assertEquals(bookRequest.getAuthor(), bookCreate.getAuthor());
 
         response = given()
+                .auth().basic("user", "user")
                 .baseUri("http://localhost")
                 .port(port)
                 .contentType(ContentType.JSON)
@@ -84,6 +86,7 @@ public class BookControllerFunctionalTests {
     @Test
     public void testDataNotFoundRead() {
         Response response = given()
+                .auth().basic("user", "user")
                 .baseUri("http://localhost")
                 .port(port)
                 .contentType(ContentType.JSON)
