@@ -81,11 +81,11 @@ for creating and retrieving books.
 [travis-badge]: https://travis-ci.org/indrabasak/springboot-mongodb-example.svg?branch=master
 [travis-badge-url]: https://travis-ci.org/indrabasak/springboot-mongodb-example/
 
-[sonarqube-badge]: https://sonarcloud.io/api/badges/gate?key=com.basaki:springboot-mongodb-example
+[sonarqube-badge]: https://sonarcloud.io/api/project_badges/measure?project=com.basaki%3Aspringboot-mongodb-example&metric=alert_status
 [sonarqube-badge-url]: https://sonarcloud.io/dashboard/index/com.basaki:springboot-mongodb-example 
 
-[technical-debt-ratio-badge]: https://sonarcloud.io/api/badges/measure?key=com.basaki:springboot-mongodb-example&metric=sqale_debt_ratio
+[technical-debt-ratio-badge]: https://sonarcloud.io/api/project_badges/measure?project=com.basaki%3Aspringboot-mongodb-example&metric=sqale_index
 [technical-debt-ratio-badge-url]: https://sonarcloud.io/dashboard/index/com.basaki:springboot-mongodb-example 
 
-[coverage-badge]: https://sonarcloud.io/api/badges/measure?key=com.basaki:springboot-mongodb-example&metric=coverage
+[coverage-badge]: https://sonarcloud.io/api/project_badges/measure?project=com.basaki%3Aspringboot-mongodb-example&metric=coverage
 [coverage-badge-url]: https://sonarcloud.io/dashboard/index/com.basaki:springboot-mongodb-example
